@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q8 Downloader - حمل من جميع المنصات</title>
-    <!-- Updated: 2025-09-16 18:52 -->
+    <!-- Updated: 2025-09-16 19:15 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -99,6 +99,27 @@
 
         .url-input:focus {
             border-color: #667eea;
+        }
+
+        .warning-message {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #856404;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
 
         .format-buttons {
@@ -213,6 +234,22 @@
             padding: 5px 10px;
             border-radius: 15px;
         }
+
+        .footer-warning {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            border-radius: 15px;
+            color: #721c24;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .footer-warning .icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -232,6 +269,10 @@
             <input type="text" id="videoUrl" class="url-input" placeholder="الصق رابط الفيديو هنا...">
         </div>
 
+        <div class="warning-message">
+            ⚠️ تحذير: لا أبيح تحميل المقاطع أو الصور التي تغضب الله
+        </div>
+
         <div class="format-buttons">
             <button class="format-btn active" data-format="mp4">فيديو (MP4)</button>
             <button class="format-btn" data-format="mp3">صوت (MP3)</button>
@@ -245,9 +286,14 @@
         </div>
 
         <div id="result" class="result"></div>
+
+        <div class="footer-warning">
+            <div class="icon">🚫</div>
+            <strong>تنبيه مهم:</strong> هذه الأداة مخصصة للاستخدام الشخصي والتعليمي فقط. يرجى احترام حقوق الطبع والنشر والقوانين المحلية. لا نتحمل مسؤولية أي استخدام غير قانوني أو غير أخلاقي لهذه الأداة.
+        </div>
     </div>
 
-    <div class="version-info">v1.1 - محدث</div>
+    <div class="version-info">v2.0 - Vercel</div>
 
     <script>
         let selectedFormat = 'mp4';
@@ -328,7 +374,7 @@
         });
 
         // إضافة timestamp للتأكد من التحديث
-        console.log('Q8 Downloader loaded at:', new Date().toLocaleString());
+        console.log('Q8 Downloader v2.0 loaded at:', new Date().toLocaleString());
     </script>
 </body>
 </html>
